@@ -10,18 +10,18 @@ namespace BlockchainAssignment
     class Transaction
     {
         DateTime timestamp;
-        String senderAddress, recipientAddress, hash, signature;
-        Double amount, fee;
+        public String senderAddress, recipientAddress, hash, signature;
+        public Double amount, fee;
 
         public Transaction(String senderAddress, String recipientAddress, Double amount, Double fee, String privateKey)
         {
-            this.timestamp = DateTime.Now;
+            timestamp = DateTime.Now;
             this.senderAddress = senderAddress;
             this.recipientAddress = recipientAddress;
             this.amount = amount;
             this.fee = fee;
-            this.hash = CreateHash();
-            this.signature = Wallet.Wallet.CreateSignature(senderAddress, privateKey, hash);
+            hash = CreateHash();
+            signature = Wallet.Wallet.CreateSignature(senderAddress, privateKey, hash);
         }
 
         public String CreateHash()
