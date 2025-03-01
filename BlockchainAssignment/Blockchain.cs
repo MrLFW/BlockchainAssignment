@@ -8,10 +8,8 @@ namespace BlockchainAssignment
 {
     class Blockchain
     {
-        /* Blockchain Properties */
-        List<Block> Blocks;
+        public List<Block> Blocks;
 
-        /* Blockchain Constructor - Initialises a new blockchain with a single genesis block */
         public Blockchain()
         {
             Blocks = new List<Block>() {
@@ -19,12 +17,16 @@ namespace BlockchainAssignment
             };
         }
 
-        /* Helper function to get a block at a user specified index */
-        public String getBlockAsString(int index)
+        public String getBlock(int index)
         {
             if (index >= 0 && index < Blocks.Count)
                 return Blocks[index].ToString();
-            return "Block does not exist at index: " + index.ToString();
+            return "Block does not Exist";
+        }
+
+        public override string ToString()
+        {
+            return String.Join("\n", Blocks);
         }
     }
 }
