@@ -4,24 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
-using System.Collections;
 
-namespace BlockchainAssignment.HashCode {
 
+namespace BlockchainAssignment.HashCode
+{
     public static class HashTools
     {
-        // Takes byte array and returns hexadecimal string
+        /// <summary>
+        /// Takes byte array and returns hexadecimal string
+        /// </summary>
+        /// <param name="ba"></param>
+        /// <returns></returns>
         public static string ByteArrayToString(byte[] ba)
         {
             StringBuilder hex = new StringBuilder(ba.Length * 2);
-
             foreach (byte b in ba)
                 hex.AppendFormat("{0:x2}", b);
-            
             return hex.ToString();
         }
 
-        // Converts String to ByteArray
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hex"></param>
+        /// <returns></returns>
         public static byte[] StringToByteArray(string hex)
         {
             return Enumerable.Range(0, hex.Length)
@@ -30,7 +36,8 @@ namespace BlockchainAssignment.HashCode {
                              .ToArray();
         }
 
-        public static String CombineHash(String hash1, String hash2)
+
+        public static String combineHash(String hash1, String hash2)
         {
             Byte[] bytes1 = StringToByteArray(hash1);
             Byte[] bytes2 = StringToByteArray(hash2);
@@ -40,6 +47,6 @@ namespace BlockchainAssignment.HashCode {
 
             return ByteArrayToString(combinedbytes);
         }
-    }
 
+    }
 }

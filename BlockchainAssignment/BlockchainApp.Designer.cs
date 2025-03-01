@@ -28,223 +28,292 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.output = new System.Windows.Forms.RichTextBox();
+            this.printBlock = new System.Windows.Forms.Button();
+            this.blockNo = new System.Windows.Forms.TextBox();
+            this.generateWallet = new System.Windows.Forms.Button();
+            this.publicKeyLabel = new System.Windows.Forms.Label();
+            this.privateKeyLabel = new System.Windows.Forms.Label();
             this.publicKey = new System.Windows.Forms.TextBox();
-            this.privKey = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.amount = new System.Windows.Forms.TextBox();
+            this.privateKey = new System.Windows.Forms.TextBox();
+            this.validateKeys = new System.Windows.Forms.Button();
+            this.createTransaction = new System.Windows.Forms.Button();
             this.fee = new System.Windows.Forms.TextBox();
-            this.receiver = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.amount = new System.Windows.Forms.TextBox();
+            this.feeLabel = new System.Windows.Forms.Label();
+            this.amountLabel = new System.Windows.Forms.Label();
+            this.reciever = new System.Windows.Forms.TextBox();
+            this.recieverKeyLabel = new System.Windows.Forms.Label();
+            this.newBlock = new System.Windows.Forms.Button();
+            this.printBlockchain = new System.Windows.Forms.Button();
+            this.readPendingTransactions = new System.Windows.Forms.Button();
+            this.validate = new System.Windows.Forms.Button();
+            this.checkBalance = new System.Windows.Forms.Button();
+            this.currentWalletLabel = new System.Windows.Forms.Label();
+            this.transactionLabel = new System.Windows.Forms.Label();
+            this.blocksLabel = new System.Windows.Forms.Label();
+            this.validationLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // output
             // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.InfoText;
-            this.richTextBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.richTextBox1.Location = new System.Drawing.Point(12, 12);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(657, 314);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.output.BackColor = System.Drawing.SystemColors.InfoText;
+            this.output.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.output.Location = new System.Drawing.Point(18, 18);
+            this.output.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.output.Name = "output";
+            this.output.Size = new System.Drawing.Size(688, 341);
+            this.output.TabIndex = 0;
+            this.output.Text = "";
             // 
-            // button1
+            // printBlock
             // 
-            this.button1.Location = new System.Drawing.Point(12, 333);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Print";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.printBlock.Location = new System.Drawing.Point(716, 99);
+            this.printBlock.Name = "printBlock";
+            this.printBlock.Size = new System.Drawing.Size(99, 39);
+            this.printBlock.TabIndex = 1;
+            this.printBlock.Text = "Block #";
+            this.printBlock.UseVisualStyleBackColor = true;
+            this.printBlock.Click += new System.EventHandler(this.PrintBlock_Click);
             // 
-            // textBox1
+            // blockNo
             // 
-            this.textBox1.Location = new System.Drawing.Point(94, 335);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.blockNo.Location = new System.Drawing.Point(821, 105);
+            this.blockNo.Name = "blockNo";
+            this.blockNo.Size = new System.Drawing.Size(34, 26);
+            this.blockNo.TabIndex = 2;
             // 
-            // button2
+            // generateWallet
             // 
-            this.button2.Location = new System.Drawing.Point(594, 335);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 53);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Generate Keys";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.generateWallet.Location = new System.Drawing.Point(38, 411);
+            this.generateWallet.Name = "generateWallet";
+            this.generateWallet.Size = new System.Drawing.Size(119, 84);
+            this.generateWallet.TabIndex = 3;
+            this.generateWallet.Text = "Generate New Wallet";
+            this.generateWallet.UseVisualStyleBackColor = true;
+            this.generateWallet.Click += new System.EventHandler(this.GenerateWallet_Click);
+            // 
+            // publicKeyLabel
+            // 
+            this.publicKeyLabel.AutoSize = true;
+            this.publicKeyLabel.Location = new System.Drawing.Point(169, 430);
+            this.publicKeyLabel.Name = "publicKeyLabel";
+            this.publicKeyLabel.Size = new System.Drawing.Size(81, 20);
+            this.publicKeyLabel.TabIndex = 4;
+            this.publicKeyLabel.Text = "Public Key";
+            // 
+            // privateKeyLabel
+            // 
+            this.privateKeyLabel.AutoSize = true;
+            this.privateKeyLabel.Location = new System.Drawing.Point(163, 462);
+            this.privateKeyLabel.Name = "privateKeyLabel";
+            this.privateKeyLabel.Size = new System.Drawing.Size(87, 20);
+            this.privateKeyLabel.TabIndex = 5;
+            this.privateKeyLabel.Text = "Private Key";
             // 
             // publicKey
             // 
-            this.publicKey.Location = new System.Drawing.Point(409, 335);
+            this.publicKey.Location = new System.Drawing.Point(253, 424);
             this.publicKey.Name = "publicKey";
-            this.publicKey.Size = new System.Drawing.Size(179, 20);
-            this.publicKey.TabIndex = 4;
+            this.publicKey.Size = new System.Drawing.Size(282, 26);
+            this.publicKey.TabIndex = 6;
             // 
-            // privKey
+            // privateKey
             // 
-            this.privKey.Location = new System.Drawing.Point(409, 365);
-            this.privKey.Name = "privKey";
-            this.privKey.Size = new System.Drawing.Size(179, 20);
-            this.privKey.TabIndex = 5;
+            this.privateKey.Location = new System.Drawing.Point(256, 456);
+            this.privateKey.Name = "privateKey";
+            this.privateKey.Size = new System.Drawing.Size(279, 26);
+            this.privateKey.TabIndex = 7;
             // 
-            // label1
+            // validateKeys
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(324, 338);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Public Key";
+            this.validateKeys.Location = new System.Drawing.Point(550, 421);
+            this.validateKeys.Name = "validateKeys";
+            this.validateKeys.Size = new System.Drawing.Size(131, 34);
+            this.validateKeys.TabIndex = 8;
+            this.validateKeys.Text = "Validate Keys";
+            this.validateKeys.UseVisualStyleBackColor = true;
+            this.validateKeys.Click += new System.EventHandler(this.ValidateKeys_Click);
             // 
-            // label2
+            // createTransaction
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(324, 368);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Private Key";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(594, 395);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 47);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Validate Keys";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(12, 423);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 46);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Create Transaction";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // amount
-            // 
-            this.amount.Location = new System.Drawing.Point(146, 423);
-            this.amount.Name = "amount";
-            this.amount.Size = new System.Drawing.Size(48, 20);
-            this.amount.TabIndex = 10;
+            this.createTransaction.Location = new System.Drawing.Point(714, 269);
+            this.createTransaction.Name = "createTransaction";
+            this.createTransaction.Size = new System.Drawing.Size(293, 40);
+            this.createTransaction.TabIndex = 9;
+            this.createTransaction.Text = "Create Transaction";
+            this.createTransaction.UseVisualStyleBackColor = true;
+            this.createTransaction.Click += new System.EventHandler(this.CreateTransaction_Click);
             // 
             // fee
             // 
-            this.fee.Location = new System.Drawing.Point(146, 450);
+            this.fee.Location = new System.Drawing.Point(956, 206);
             this.fee.Name = "fee";
-            this.fee.Size = new System.Drawing.Size(48, 20);
-            this.fee.TabIndex = 11;
+            this.fee.Size = new System.Drawing.Size(52, 26);
+            this.fee.TabIndex = 13;
             // 
-            // receiver
+            // amount
             // 
-            this.receiver.Location = new System.Drawing.Point(288, 450);
-            this.receiver.Name = "receiver";
-            this.receiver.Size = new System.Drawing.Size(173, 20);
-            this.receiver.TabIndex = 12;
+            this.amount.Location = new System.Drawing.Point(831, 206);
+            this.amount.Name = "amount";
+            this.amount.Size = new System.Drawing.Size(52, 26);
+            this.amount.TabIndex = 12;
             // 
-            // label3
+            // feeLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(94, 429);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 13);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Amount";
+            this.feeLabel.AutoSize = true;
+            this.feeLabel.Location = new System.Drawing.Point(913, 209);
+            this.feeLabel.Name = "feeLabel";
+            this.feeLabel.Size = new System.Drawing.Size(37, 20);
+            this.feeLabel.TabIndex = 11;
+            this.feeLabel.Text = "Fee";
             // 
-            // label4
+            // amountLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(94, 453);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(25, 13);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Fee";
+            this.amountLabel.AutoSize = true;
+            this.amountLabel.Location = new System.Drawing.Point(760, 209);
+            this.amountLabel.Name = "amountLabel";
+            this.amountLabel.Size = new System.Drawing.Size(65, 20);
+            this.amountLabel.TabIndex = 10;
+            this.amountLabel.Text = "Amount";
             // 
-            // label5
+            // reciever
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(211, 453);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 13);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Receiver Key";
+            this.reciever.Location = new System.Drawing.Point(831, 237);
+            this.reciever.Name = "reciever";
+            this.reciever.Size = new System.Drawing.Size(177, 26);
+            this.reciever.TabIndex = 15;
             // 
-            // button5
+            // recieverKeyLabel
             // 
-            this.button5.Location = new System.Drawing.Point(12, 374);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 43);
-            this.button5.TabIndex = 16;
-            this.button5.Text = "Generate New Block";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.recieverKeyLabel.AutoSize = true;
+            this.recieverKeyLabel.Location = new System.Drawing.Point(724, 240);
+            this.recieverKeyLabel.Name = "recieverKeyLabel";
+            this.recieverKeyLabel.Size = new System.Drawing.Size(101, 20);
+            this.recieverKeyLabel.TabIndex = 14;
+            this.recieverKeyLabel.Text = "Reciever Key";
             // 
-            // button6
+            // newBlock
             // 
-            this.button6.Location = new System.Drawing.Point(201, 333);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 17;
-            this.button6.Text = "Print All";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.newBlock.Location = new System.Drawing.Point(717, 51);
+            this.newBlock.Name = "newBlock";
+            this.newBlock.Size = new System.Drawing.Size(294, 40);
+            this.newBlock.TabIndex = 16;
+            this.newBlock.Text = "Generate New Block";
+            this.newBlock.UseVisualStyleBackColor = true;
+            this.newBlock.Click += new System.EventHandler(this.NewBlock_Click);
             // 
-            // button7
+            // printBlockchain
             // 
-            this.button7.Location = new System.Drawing.Point(201, 362);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 54);
-            this.button7.TabIndex = 18;
-            this.button7.Text = "Print Pending Transactions";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.printBlockchain.Location = new System.Drawing.Point(862, 99);
+            this.printBlockchain.Name = "printBlockchain";
+            this.printBlockchain.Size = new System.Drawing.Size(148, 39);
+            this.printBlockchain.TabIndex = 17;
+            this.printBlockchain.Text = "Entire Chain";
+            this.printBlockchain.UseVisualStyleBackColor = true;
+            this.printBlockchain.Click += new System.EventHandler(this.ReadAll_Click);
+            // 
+            // readPendingTransactions
+            // 
+            this.readPendingTransactions.Location = new System.Drawing.Point(713, 320);
+            this.readPendingTransactions.Name = "readPendingTransactions";
+            this.readPendingTransactions.Size = new System.Drawing.Size(294, 39);
+            this.readPendingTransactions.TabIndex = 18;
+            this.readPendingTransactions.Text = "Read Pending Transactions";
+            this.readPendingTransactions.UseVisualStyleBackColor = true;
+            this.readPendingTransactions.Click += new System.EventHandler(this.PrintPendingTransactions_Click);
+            // 
+            // validate
+            // 
+            this.validate.Location = new System.Drawing.Point(713, 424);
+            this.validate.Name = "validate";
+            this.validate.Size = new System.Drawing.Size(294, 71);
+            this.validate.TabIndex = 19;
+            this.validate.Text = "Full Blockchain Validation";
+            this.validate.UseVisualStyleBackColor = true;
+            this.validate.Click += new System.EventHandler(this.Validate_Click);
+            // 
+            // checkBalance
+            // 
+            this.checkBalance.Location = new System.Drawing.Point(550, 458);
+            this.checkBalance.Name = "checkBalance";
+            this.checkBalance.Size = new System.Drawing.Size(131, 37);
+            this.checkBalance.TabIndex = 20;
+            this.checkBalance.Text = "Check Balance";
+            this.checkBalance.UseVisualStyleBackColor = true;
+            this.checkBalance.Click += new System.EventHandler(this.CheckBalance_Click);
+            // 
+            // currentWalletLabel
+            // 
+            this.currentWalletLabel.AutoSize = true;
+            this.currentWalletLabel.Location = new System.Drawing.Point(40, 383);
+            this.currentWalletLabel.Name = "currentWalletLabel";
+            this.currentWalletLabel.Size = new System.Drawing.Size(110, 20);
+            this.currentWalletLabel.TabIndex = 22;
+            this.currentWalletLabel.Text = "Current Wallet";
+            // 
+            // transactionLabel
+            // 
+            this.transactionLabel.AutoSize = true;
+            this.transactionLabel.Location = new System.Drawing.Point(712, 170);
+            this.transactionLabel.Name = "transactionLabel";
+            this.transactionLabel.Size = new System.Drawing.Size(100, 20);
+            this.transactionLabel.TabIndex = 23;
+            this.transactionLabel.Text = "Transactions";
+            // 
+            // blocksLabel
+            // 
+            this.blocksLabel.AutoSize = true;
+            this.blocksLabel.Location = new System.Drawing.Point(715, 19);
+            this.blocksLabel.Name = "blocksLabel";
+            this.blocksLabel.Size = new System.Drawing.Size(56, 20);
+            this.blocksLabel.TabIndex = 24;
+            this.blocksLabel.Text = "Blocks";
+            // 
+            // validationLabel
+            // 
+            this.validationLabel.AutoSize = true;
+            this.validationLabel.Location = new System.Drawing.Point(715, 385);
+            this.validationLabel.Name = "validationLabel";
+            this.validationLabel.Size = new System.Drawing.Size(79, 20);
+            this.validationLabel.TabIndex = 25;
+            this.validationLabel.Text = "Validation";
             // 
             // BlockchainApp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(681, 481);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.receiver);
+            this.ClientSize = new System.Drawing.Size(1022, 536);
+            this.Controls.Add(this.validationLabel);
+            this.Controls.Add(this.blocksLabel);
+            this.Controls.Add(this.transactionLabel);
+            this.Controls.Add(this.currentWalletLabel);
+            this.Controls.Add(this.checkBalance);
+            this.Controls.Add(this.validate);
+            this.Controls.Add(this.readPendingTransactions);
+            this.Controls.Add(this.printBlockchain);
+            this.Controls.Add(this.newBlock);
+            this.Controls.Add(this.reciever);
+            this.Controls.Add(this.recieverKeyLabel);
             this.Controls.Add(this.fee);
             this.Controls.Add(this.amount);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.privKey);
+            this.Controls.Add(this.feeLabel);
+            this.Controls.Add(this.amountLabel);
+            this.Controls.Add(this.createTransaction);
+            this.Controls.Add(this.validateKeys);
+            this.Controls.Add(this.privateKey);
             this.Controls.Add(this.publicKey);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.privateKeyLabel);
+            this.Controls.Add(this.publicKeyLabel);
+            this.Controls.Add(this.generateWallet);
+            this.Controls.Add(this.blockNo);
+            this.Controls.Add(this.printBlock);
+            this.Controls.Add(this.output);
             this.ForeColor = System.Drawing.Color.Black;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "BlockchainApp";
             this.Text = "Blockchain App";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,25 +321,31 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.RichTextBox output;
+        private System.Windows.Forms.Button printBlock;
+        private System.Windows.Forms.TextBox blockNo;
+        private System.Windows.Forms.Button generateWallet;
+        private System.Windows.Forms.Label publicKeyLabel;
+        private System.Windows.Forms.Label privateKeyLabel;
         private System.Windows.Forms.TextBox publicKey;
-        private System.Windows.Forms.TextBox privKey;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox amount;
+        private System.Windows.Forms.TextBox privateKey;
+        private System.Windows.Forms.Button validateKeys;
+        private System.Windows.Forms.Button createTransaction;
         private System.Windows.Forms.TextBox fee;
-        private System.Windows.Forms.TextBox receiver;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.TextBox amount;
+        private System.Windows.Forms.Label feeLabel;
+        private System.Windows.Forms.Label amountLabel;
+        private System.Windows.Forms.TextBox reciever;
+        private System.Windows.Forms.Label recieverKeyLabel;
+        private System.Windows.Forms.Button newBlock;
+        private System.Windows.Forms.Button printBlockchain;
+        private System.Windows.Forms.Button readPendingTransactions;
+        private System.Windows.Forms.Button validate;
+        private System.Windows.Forms.Button checkBalance;
+        private System.Windows.Forms.Label currentWalletLabel;
+        private System.Windows.Forms.Label transactionLabel;
+        private System.Windows.Forms.Label blocksLabel;
+        private System.Windows.Forms.Label validationLabel;
     }
 }
 
