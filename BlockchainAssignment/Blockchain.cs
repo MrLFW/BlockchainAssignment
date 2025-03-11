@@ -59,7 +59,7 @@ namespace BlockchainAssignment
         // Check validity of a blocks hash by recomputing the hash and comparing with the mined value
         public static bool ValidateHash(Block b)
         {
-            String rehash = b.CreateHash();
+            String rehash = b.CreateHash(b.nonce);
             return rehash.Equals(b.hash);
         }
 

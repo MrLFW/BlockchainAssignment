@@ -52,7 +52,7 @@ namespace BlockchainAssignment
         // Represent a transaction as a string for output to UI
         public override string ToString()
         {
-            return "  [TRANSACTION START]" 
+            return "\n  [TRANSACTION START]" 
                 + "\n  Timestamp: " + timestamp
                 + "\n  -- Verification --"
                 + "\n  Hash: " + hash
@@ -63,7 +63,7 @@ namespace BlockchainAssignment
                 + "\n  -- Participants --"
                 + "\n  Sender: " + senderAddress
                 + "\n  Reciever: " + recipientAddress 
-                + "\n  [TRANSACTION END]";
+                + "\n  [TRANSACTION END]\n";
         }
     }
 }

@@ -84,18 +84,28 @@ namespace BlockchainAssignment
             UpdateText(transaction.ToString());
         }
 
-        /* BLOCK MANAGEMENT */
-        // Conduct Proof-of-work in order to mine transactions from the pool and submit a new block to the Blockchain
-        private void NewBlock_Click(object sender, EventArgs e)
+        private void newBlock(bool multithreaded)
         {
             // Retrieve pending transactions to be added to the newly generated Block
             List<Transaction> transactions = blockchain.GetPendingTransactions();
 
             // Create and append the new block - requires a reference to the previous block, a set of transactions and the miners public address (For the reward to be issued)
-            Block newBlock = new Block(blockchain.GetLastBlock(), transactions, publicKey.Text);
+            Block newBlock = new Block(blockchain.GetLastBlock(), transactions, publicKey.Text, multithreaded);
             blockchain.blocks.Add(newBlock);
 
             UpdateText(blockchain.ToString());
+        }
+
+        /* BLOCK MANAGEMENT */
+        // Conduct Proof-of-work in order to mine transactions from the pool and submit a new block to the Blockchain
+        private void newBlockMultiThread_Click(object sender, EventArgs e)
+        {
+            newBlock(multithreaded: true);
+        }
+
+        private void newBlockSingleThread_Click(object sender, EventArgs e)
+        {
+            newBlock(multithreaded: false);
         }
 
 
@@ -104,7 +114,7 @@ namespace BlockchainAssignment
         private void Validate_Click(object sender, EventArgs e)
         {
             // CASE: Genesis Block - Check only hash as no transactions are currently present
-            if(blockchain.blocks.Count == 1)
+            if (blockchain.blocks.Count == 1)
             {
                 if (!Blockchain.ValidateHash(blockchain.blocks[0])) // Recompute Hash to check validity
                     UpdateText("Blockchain is invalid");
@@ -113,9 +123,9 @@ namespace BlockchainAssignment
                 return;
             }
 
-            for (int i=1; i<blockchain.blocks.Count-1; i++)
+            for (int i = 1; i < blockchain.blocks.Count - 1; i++)
             {
-                if(
+                if (
                     blockchain.blocks[i].prevHash != blockchain.blocks[i - 1].hash || // Check hash "chain"
                     !Blockchain.ValidateHash(blockchain.blocks[i]) ||  // Check each blocks hash
                     !Blockchain.ValidateMerkleRoot(blockchain.blocks[i]) // Check transaction integrity using Merkle Root

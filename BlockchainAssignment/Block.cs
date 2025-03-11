@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 
 namespace BlockchainAssignment
 {
@@ -12,7 +14,7 @@ namespace BlockchainAssignment
         private DateTime timestamp; // Time of creation
 
         private int index, // Position of the block in the sequence of blocks
-            difficulty = 4; // An arbitrary number of 0's to proceed a hash value
+            difficulty = 5; // An arbitrary number of 0's to proceed a hash value
 
         public String prevHash, // A reference pointer to the previous block
             hash, // The current blocks "identity"
@@ -26,6 +28,9 @@ namespace BlockchainAssignment
 
         // Rewards
         public double reward; // Simple fixed reward established by "Coinbase"
+        private double miningTime;
+        private string threadingType;
+        const int threadCount = 4; // Hard-coded number of threads
 
         /* Genesis block constructor */
         public Block()
@@ -33,11 +38,11 @@ namespace BlockchainAssignment
             timestamp = DateTime.Now;
             index = 0;
             transactionList = new List<Transaction>();
-            hash = Mine();
+            hash = MineMultiThreaded();
         }
 
         /* New Block constructor */
-        public Block(Block lastBlock, List<Transaction> transactions, String minerAddress)
+        public Block(Block lastBlock, List<Transaction> transactions, String minerAddress, bool multithreaded)
         {
             timestamp = DateTime.Now;
 
@@ -50,11 +55,11 @@ namespace BlockchainAssignment
             transactionList = new List<Transaction>(transactions); // Assign provided transactions to the block
 
             merkleRoot = MerkleRoot(transactionList); // Calculate the merkle root of the blocks transactions
-            hash = Mine(); // Conduct PoW to create a hash which meets the given difficulty requirement
+            hash = multithreaded ? MineMultiThreaded() : Mine(); // Conduct PoW to create a hash which meets the given difficulty requirement
         }
 
         /* Hashes the entire Block object */
-        public String CreateHash()
+        public String CreateHash(long nonce)
         {
             String hash = String.Empty;
             SHA256 hasher = SHA256Managed.Create();
@@ -73,19 +78,78 @@ namespace BlockchainAssignment
         }
 
         // Create a Hash which satisfies the difficulty level required for PoW
+        public String MineMultiThreaded()
+        {
+            var stopwatch = Stopwatch.StartNew();
+            Thread[] miners = new Thread[threadCount];
+            bool found = false;
+            String finalHash = String.Empty;
+            long successfulNonce = 0;
+
+            String re = new string('0', difficulty); // A string for analysing the PoW requirement
+
+            object lockObject = new object();
+
+            void MineThread(object threadId)
+            {
+                long threadNonce = (int)threadId; // TODO check we can cast to int then set as long
+                String hash;
+
+                while (!found)
+                {
+                    hash = CreateHash(threadNonce);
+
+                    if (hash.StartsWith(re))
+                    {
+                        lock (lockObject)
+                        {
+                            if (!found)
+                            {
+                                found = true;
+                                finalHash = hash;
+                                successfulNonce = threadNonce;
+                            }
+                        }
+                        break;
+                    }
+                    threadNonce += threadCount;
+                }
+            }
+
+            for (int i = 0; i < threadCount; i++)
+            {
+                miners[i] = new Thread(MineThread);
+                miners[i].Start(i);
+            }
+
+            foreach (var thread in miners)
+            {
+                thread.Join();
+            }
+
+            nonce = successfulNonce;
+            stopwatch.Stop();
+            miningTime = stopwatch.Elapsed.TotalSeconds;
+            threadingType = "Multi";
+            return finalHash;
+        }
+
         public String Mine()
         {
+            var stopwatch = Stopwatch.StartNew();
             nonce = 0; // Initalise the nonce
-            String hash = CreateHash(); // Hash the block
-
+            String hash = CreateHash(nonce); // Hash the block
             String re = new string('0', difficulty); // A string for analysing the PoW requirement
 
             while (!hash.StartsWith(re)) // Check the resultant hash against the "re" string
             {
                 nonce++; // Increment the nonce should the difficulty level not be satisfied
-                hash = CreateHash(); // Rehash with the new nonce as to generate a different hash
+                hash = CreateHash(nonce); // Rehash with the new nonce as to generate a different hash
             }
 
+            stopwatch.Stop();
+            miningTime = stopwatch.Elapsed.TotalSeconds;
+            threadingType = "Single";
             return hash; // Return the hash meeting the difficulty requirement
         }
 
@@ -141,13 +205,15 @@ namespace BlockchainAssignment
                 + "\nDifficulty Level: " + difficulty
                 + "\nNonce: " + nonce
                 + "\nHash: " + hash
+                + $"\nMining Time: {miningTime:F3} seconds"
+                + "\nThreading Type: " + threadingType
                 + "\n-- Rewards --"
                 + "\nReward: " + reward
                 + "\nMiners Address: " + minerAddress
                 + "\n-- " + transactionList.Count + " Transactions --"
                 + "\nMerkle Root: " + merkleRoot
                 + "\n" + String.Join("\n", transactionList)
-                + "\n[BLOCK END]";
+                + "\n[BLOCK END]\n";
         }
     }
 }
