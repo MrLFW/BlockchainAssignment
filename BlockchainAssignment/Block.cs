@@ -14,7 +14,8 @@ namespace BlockchainAssignment
         private DateTime timestamp; // Time of creation
 
         private int index, // Position of the block in the sequence of blocks
-            difficulty = 5; // An arbitrary number of 0's to proceed a hash value
+            difficulty,
+            prevDifficulty; // An arbitrary number of 0's to proceed a hash value
 
         public String prevHash, // A reference pointer to the previous block
             hash, // The current blocks "identity"
@@ -28,7 +29,9 @@ namespace BlockchainAssignment
 
         // Rewards
         public double reward; // Simple fixed reward established by "Coinbase"
+        private double targetBlockTime = 15; // Target time between blocks in seconds
         private double miningTime;
+        public double prevMiningTime; // Time taken to mine the previous block
         private string threadingType;
         const int threadCount = 4; // Hard-coded number of threads
 
@@ -37,6 +40,8 @@ namespace BlockchainAssignment
         {
             timestamp = DateTime.Now;
             index = 0;
+            prevMiningTime = 0;
+            difficulty = 4;
             transactionList = new List<Transaction>();
             hash = MineMultiThreaded();
         }
@@ -48,6 +53,9 @@ namespace BlockchainAssignment
 
             index = lastBlock.index + 1;
             prevHash = lastBlock.hash;
+            prevMiningTime = lastBlock.miningTime;
+            prevDifficulty = lastBlock.difficulty;
+            difficulty = CalculateDifficulty();
 
             this.minerAddress = minerAddress; // The wallet to be credited the reward for the mining effort
             reward = 1.0; // Assign a simple fixed value reward
@@ -56,6 +64,11 @@ namespace BlockchainAssignment
 
             merkleRoot = MerkleRoot(transactionList); // Calculate the merkle root of the blocks transactions
             hash = multithreaded ? MineMultiThreaded() : Mine(); // Conduct PoW to create a hash which meets the given difficulty requirement
+        }
+
+        private int CalculateDifficulty()
+        {
+            return prevMiningTime < targetBlockTime ? prevDifficulty + 1 : prevDifficulty - 1;
         }
 
         /* Hashes the entire Block object */

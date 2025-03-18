@@ -10,7 +10,7 @@ namespace BlockchainAssignment
     class Transaction
     {
         /* Transaction Variables */
-        DateTime timestamp; // Time of creation
+        public DateTime timestamp; // Time of creation
         public String senderAddress, recipientAddress; // Participants public key addresses
         public double amount, fee; // Quantities transferred
         public String hash, signature; // Attributes for verification of validity

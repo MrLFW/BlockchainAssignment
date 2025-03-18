@@ -86,8 +86,17 @@ namespace BlockchainAssignment
 
         private void newBlock(bool multithreaded)
         {
+
+            var mode = new MiningMode();
+            if (GreedyButton.Enabled)
+                mode = MiningMode.Greedy;
+            else if (AltruisticButton.Enabled)
+                mode = MiningMode.Altruistic;
+            else if (RandomButton.Enabled)
+                mode = MiningMode.Random;
+
             // Retrieve pending transactions to be added to the newly generated Block
-            List<Transaction> transactions = blockchain.GetPendingTransactions();
+            List<Transaction> transactions = blockchain.GetPendingTransactions(mode);
 
             // Create and append the new block - requires a reference to the previous block, a set of transactions and the miners public address (For the reward to be issued)
             Block newBlock = new Block(blockchain.GetLastBlock(), transactions, publicKey.Text, multithreaded);
@@ -136,6 +145,11 @@ namespace BlockchainAssignment
                 }
             }
             UpdateText("Blockchain is valid");
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

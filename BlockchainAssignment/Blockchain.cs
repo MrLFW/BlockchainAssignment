@@ -43,10 +43,32 @@ namespace BlockchainAssignment
         }
 
         // Retrieve pending transactions and remove from pool
-        public List<Transaction> GetPendingTransactions()
+        public List<Transaction> GetPendingTransactions(MiningMode mode)
         {
             // Determine the number of transactions to retrieve dependent on the number of pending transactions and the limit specified
             int n = Math.Min(transactionsPerBlock, transactionPool.Count);
+
+            if (mode == MiningMode.Greedy)
+            {
+                transactionPool.Sort((x, y) => y.fee.CompareTo(x.fee));
+            }
+            else if (mode == MiningMode.Altruistic)
+            {
+                transactionPool.Sort((x, y) => x.timestamp.CompareTo(y.timestamp));
+            }
+            else if (mode == MiningMode.Random)
+            {
+                Random rng = new Random();
+                int i = transactionPool.Count;
+                while (i > 1)
+                {
+                    i--;
+                    int k = rng.Next(i + 1);
+                    Transaction value = transactionPool[k]; // swap the values around
+                    transactionPool[k] = transactionPool[i];
+                    transactionPool[i] = value;
+                }
+            }
 
             // "Pull" transactions from the transaction list (modifying the original list)
             List<Transaction> transactions = transactionPool.GetRange(0, n);
