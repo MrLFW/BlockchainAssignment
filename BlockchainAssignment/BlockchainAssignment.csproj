@@ -58,6 +58,7 @@
     <Compile Include="MiningMode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StakeValidator.cs" />
     <Compile Include="Transaction.cs" />
     <Compile Include="Wallet\Wallet.cs" />
     <EmbeddedResource Include="BlockchainApp.resx">

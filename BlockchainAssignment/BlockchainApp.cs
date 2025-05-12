@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace BlockchainAssignment
@@ -82,6 +83,18 @@ namespace BlockchainAssignment
             /* TODO: Validate transaction */
             blockchain.transactionPool.Add(transaction);
             UpdateText(transaction.ToString());
+        }
+
+        private void ForgeBlock()
+        {
+            var stakes = blockchain.blocks
+                .SelectMany(b => b.transactionList)
+                .SelectMany(tx => new[] { tx.senderAddress, tx.recipientAddress })
+                .Distinct()
+                .ToDictionary(
+                    addr => addr,
+                    addr => blockchain.GetBalance(addr)
+                );
         }
 
         private void newBlock(bool multithreaded)
