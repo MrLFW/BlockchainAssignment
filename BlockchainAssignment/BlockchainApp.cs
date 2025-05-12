@@ -88,11 +88,11 @@ namespace BlockchainAssignment
         {
 
             var mode = new MiningMode();
-            if (GreedyButton.Enabled)
+            if (GreedyButton.Checked)
                 mode = MiningMode.Greedy;
-            else if (AltruisticButton.Enabled)
+            else if (AltruisticButton.Checked)
                 mode = MiningMode.Altruistic;
-            else if (RandomButton.Enabled)
+            else if (RandomButton.Checked)
                 mode = MiningMode.Random;
 
             // Retrieve pending transactions to be added to the newly generated Block
