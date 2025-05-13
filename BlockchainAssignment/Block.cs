@@ -66,6 +66,27 @@ namespace BlockchainAssignment
             hash = multithreaded ? MineMultiThreaded() : Mine(); // Conduct PoW to create a hash which meets the given difficulty requirement
         }
 
+        // PROOF OF STAKE CONSTRUCTOR
+        public Block(Block lastBlock, List<Transaction> transactions, String minerAddress)
+        {
+            timestamp = DateTime.Now;
+
+            index = lastBlock.index + 1;
+            prevHash = lastBlock.hash;
+            prevMiningTime = lastBlock.miningTime;
+            prevDifficulty = lastBlock.difficulty;
+            difficulty = 1;
+
+            this.minerAddress = minerAddress; // The wallet to be credited the reward for the mining effort
+            reward = 0.1; // Less reward for proof of stake
+            transactions.Add(createRewardTransaction(transactions)); // Create and append the reward transaction
+            transactionList = new List<Transaction>(transactions); // Assign provided transactions to the block
+
+            merkleRoot = MerkleRoot(transactionList); // Calculate the merkle root of the blocks transactions
+            hash = Forge(); // Conduct PoW to create a hash which meets the given difficulty requirement
+        }
+
+
         private int CalculateDifficulty()
         {
             return prevMiningTime < targetBlockTime ? prevDifficulty + 1 : prevDifficulty - 1;
@@ -165,6 +186,18 @@ namespace BlockchainAssignment
             threadingType = "Single";
             return hash; // Return the hash meeting the difficulty requirement
         }
+
+        public String Forge()
+        {
+            var stopwatch = Stopwatch.StartNew();
+            nonce = 0; // Initalise the nonce
+            String hash = CreateHash(nonce); // Hash the block
+            stopwatch.Stop();
+            miningTime = stopwatch.Elapsed.TotalSeconds;
+            threadingType = "Single (PoS)";
+            return hash; // Return the hash meeting the difficulty requirement
+        }
+
 
         // Merkle Root Algorithm - Encodes transactions within a block into a single hash
         public static String MerkleRoot(List<Transaction> transactionList)

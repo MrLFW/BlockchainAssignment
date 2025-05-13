@@ -60,6 +60,7 @@
             this.RandomButton = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.forgeBlock = new System.Windows.Forms.Button();
+            this.randomTransaction = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -387,12 +388,24 @@
             this.forgeBlock.UseVisualStyleBackColor = true;
             this.forgeBlock.Click += new System.EventHandler(this.forgeBlock_Click);
             // 
+            // randomTransaction
+            // 
+            this.randomTransaction.Location = new System.Drawing.Point(486, 347);
+            this.randomTransaction.Margin = new System.Windows.Forms.Padding(2);
+            this.randomTransaction.Name = "randomTransaction";
+            this.randomTransaction.Size = new System.Drawing.Size(196, 26);
+            this.randomTransaction.TabIndex = 34;
+            this.randomTransaction.Text = "Generate Random Transaction";
+            this.randomTransaction.UseVisualStyleBackColor = true;
+            this.randomTransaction.Click += new System.EventHandler(this.randomTransaction_Click);
+            // 
             // BlockchainApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1039, 1089);
+            this.ClientSize = new System.Drawing.Size(697, 726);
+            this.Controls.Add(this.randomTransaction);
             this.Controls.Add(this.forgeBlock);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -466,6 +479,7 @@
         private System.Windows.Forms.RadioButton RandomButton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button forgeBlock;
+        private System.Windows.Forms.Button randomTransaction;
     }
 }
 

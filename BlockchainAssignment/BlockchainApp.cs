@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 
 namespace BlockchainAssignment
@@ -51,12 +52,17 @@ namespace BlockchainAssignment
 
         /* WALLETS */
         // Generate a new Wallet and fill the public and private key fields of the UI
-        private void GenerateWallet_Click(object sender, EventArgs e)
+        private void GenerateWallet()
         {
             Wallet.Wallet myNewWallet = new Wallet.Wallet(out string privKey);
 
             publicKey.Text = myNewWallet.publicID;
             privateKey.Text = privKey;
+        }
+
+        private void GenerateWallet_Click(object sender, EventArgs e)
+        {
+            GenerateWallet();
         }
 
         // Validate the keys loaded in the UI by comparing their mathematical relationship
@@ -85,7 +91,7 @@ namespace BlockchainAssignment
             UpdateText(transaction.ToString());
         }
 
-        private void newBlock(bool multithreaded, string minerAddress)
+        private void newBlock(bool multithreaded)
         {
 
             var mode = new MiningMode();
@@ -100,7 +106,7 @@ namespace BlockchainAssignment
             List<Transaction> transactions = blockchain.GetPendingTransactions(mode);
 
             // Create and append the new block - requires a reference to the previous block, a set of transactions and the miners public address (For the reward to be issued)
-            Block newBlock = new Block(blockchain.GetLastBlock(), transactions, minerAddress, multithreaded);
+            Block newBlock = new Block(blockchain.GetLastBlock(), transactions, publicKey.Text, multithreaded);
             blockchain.blocks.Add(newBlock);
 
             UpdateText(blockchain.ToString());
@@ -110,12 +116,12 @@ namespace BlockchainAssignment
         // Conduct Proof-of-work in order to mine transactions from the pool and submit a new block to the Blockchain
         private void newBlockMultiThread_Click(object sender, EventArgs e)
         {
-            newBlock(multithreaded: true, publicKey.Text);
+            newBlock(multithreaded: true);
         }
 
         private void newBlockSingleThread_Click(object sender, EventArgs e)
         {
-            newBlock(multithreaded: false, publicKey.Text);
+            newBlock(multithreaded: false);
         }
 
 
@@ -159,9 +165,63 @@ namespace BlockchainAssignment
                     addr => blockchain.GetBalance(addr)
                 );
 
+            if (stakes.Count == 0)
+            {
+                UpdateText("Cannot forge new block, no stakes!");
+                return;
+            }
+
             var validator = ValidatorPicker.Pick(stakes);
 
-            newBlock(multithreaded: true, validator);
+            var mode = new MiningMode();
+            if (GreedyButton.Checked)
+                mode = MiningMode.Greedy;
+            else if (AltruisticButton.Checked)
+                mode = MiningMode.Altruistic;
+            else if (RandomButton.Checked)
+                mode = MiningMode.Random;
+
+            // Retrieve pending transactions to be added to the newly generated Block
+            List<Transaction> transactions = blockchain.GetPendingTransactions(mode);
+
+            // Create and append the new block - requires a reference to the previous block, a set of transactions and the miners public address (For the reward to be issued)
+            Block newBlock = new Block(blockchain.GetLastBlock(), transactions, publicKey.Text);
+            blockchain.blocks.Add(newBlock);
+
+            UpdateText(blockchain.ToString());
+
         }
+
+        private void randomTransaction_Click(object sender, EventArgs e)
+        {
+            GenerateRandomTransaction();
+        }
+
+        private void GenerateRandomTransaction()
+        {
+            // Generate a random wallet for the sender
+            GenerateWallet();
+            string senderAddress = publicKey.Text;
+            string senderPrivateKey = privateKey.Text;
+
+            // Generate a random recipient address
+            Wallet.Wallet randomWallet = new Wallet.Wallet(out _);
+            string recipientAddress = randomWallet.publicID;
+
+            // Generate random amount and fee
+            Random random = new Random();
+            double amount = Math.Round(random.NextDouble() * 10, 2); // Random amount between 0 and 10
+            double fee = Math.Round(random.NextDouble() * 1, 2); // Random fee between 0 and 1
+
+            // Create the transaction
+            Transaction transaction = new Transaction(senderAddress, recipientAddress, amount, fee, senderPrivateKey);
+
+            // Add the transaction to the transaction pool
+            blockchain.transactionPool.Add(transaction);
+
+            // Update the UI with the transaction details
+            UpdateText(transaction.ToString());
+        }
+
     }
 }

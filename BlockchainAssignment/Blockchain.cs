@@ -95,8 +95,8 @@ namespace BlockchainAssignment
         // Check the balance associated with a wallet based on the public key
         public double GetBalance(String address)
         {
-            // Accumulator value
-            double balance = 0;
+            // Starting balance
+            double balance = 100;
 
             // Loop through all approved transactions in order to assess account balance
             foreach(Block b in blocks)
