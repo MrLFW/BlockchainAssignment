@@ -1,0 +1,151 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.3.1 Safari/605.1.15" version="26.2.13">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="989" dy="546" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="RscS6ABFdWKbjohYTl5G-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="WIyWlLk6GJQsqaUBKTNV-3" target="RscS6ABFdWKbjohYTl5G-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-3" value="Program Starts" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="300" y="280" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RscS6ABFdWKbjohYTl5G-2" target="RscS6ABFdWKbjohYTl5G-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-2" value="Create Genesis Block" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="300" y="360" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RscS6ABFdWKbjohYTl5G-6" target="RscS6ABFdWKbjohYTl5G-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-6" value="Mine Block&lt;div&gt;(Proof of Work)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="140" y="200" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RscS6ABFdWKbjohYTl5G-8" target="RscS6ABFdWKbjohYTl5G-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-8" value="Determine Mining Mode (Greedy, Altruistic, Random)" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="140" y="280" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RscS6ABFdWKbjohYTl5G-10" target="RscS6ABFdWKbjohYTl5G-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-10" value="Pick Transactions From Pool For New Block" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="140" y="360" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RscS6ABFdWKbjohYTl5G-12" target="RscS6ABFdWKbjohYTl5G-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-12" value="Create New Block Using Mining Constructor" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="140" y="440" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-14" value="Add to Blockchain" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="300" y="440" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RscS6ABFdWKbjohYTl5G-17" target="RscS6ABFdWKbjohYTl5G-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-17" value="Forge Block&amp;nbsp;&lt;div&gt;(Proof of Stake)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="460" y="40" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RscS6ABFdWKbjohYTl5G-19" target="RscS6ABFdWKbjohYTl5G-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-19" value="Calculate Stakes Dict Containing Addresses&lt;div&gt;and Balances&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="460" y="120" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RscS6ABFdWKbjohYTl5G-21" target="RscS6ABFdWKbjohYTl5G-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-21" value="Shuffle Stakes and Pick Validator" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="460" y="200" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RscS6ABFdWKbjohYTl5G-24" target="RscS6ABFdWKbjohYTl5G-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-24" value="Determine Mining Mode (Greedy, Altruistic, Random)" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="460" y="280" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RscS6ABFdWKbjohYTl5G-26" target="RscS6ABFdWKbjohYTl5G-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-26" value="Pick Transactions From Pool For New Block" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="460" y="360" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RscS6ABFdWKbjohYTl5G-27" target="RscS6ABFdWKbjohYTl5G-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-27" value="Create New Block Using Proof of Stake Constructor" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="460" y="440" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RscS6ABFdWKbjohYTl5G-30" target="RscS6ABFdWKbjohYTl5G-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-30" value="Create New Transaction" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="140" y="535" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RscS6ABFdWKbjohYTl5G-33" target="RscS6ABFdWKbjohYTl5G-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-33" value="Generate Hash and Wallet Signature&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="140" y="620" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-35" value="Add Transaction to Transaction Pool" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="140" y="710" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-39" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RscS6ABFdWKbjohYTl5G-37" target="RscS6ABFdWKbjohYTl5G-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-37" value="Generate New&amp;nbsp;&lt;div&gt;Wallet&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="300" y="535" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RscS6ABFdWKbjohYTl5G-38" target="RscS6ABFdWKbjohYTl5G-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-38" value="Generate Public and Private Keys using ECDsaP256" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="300" y="620" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-40" value="Show Keys in UI" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="300" y="710" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-44" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RscS6ABFdWKbjohYTl5G-42" target="RscS6ABFdWKbjohYTl5G-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-42" value="Validate Keys" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="460" y="535" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-48" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RscS6ABFdWKbjohYTl5G-43" target="RscS6ABFdWKbjohYTl5G-47">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-43" value="Create Test Hash" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="460" y="620" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-50" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RscS6ABFdWKbjohYTl5G-47" target="RscS6ABFdWKbjohYTl5G-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-47" value="Create Signature Using Keys and&lt;div&gt;Test Hash&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="460" y="710" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-49" value="Validate Signature Using Public Key, Test Hash and Signature" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="455" y="800" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-54" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RscS6ABFdWKbjohYTl5G-51" target="RscS6ABFdWKbjohYTl5G-53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-51" value="Validate Full Blockchain" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="140" y="840" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RscS6ABFdWKbjohYTl5G-53" target="RscS6ABFdWKbjohYTl5G-57">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-53" value="Check That Each Block&#39;s prevHash is The Next&amp;nbsp;&lt;div&gt;&lt;div&gt;Block&#39;s Hash&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="132.5" y="930" width="135" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RscS6ABFdWKbjohYTl5G-57" value="Validate Hash and Merkle Root of Each Block" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="140" y="1020" width="120" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
