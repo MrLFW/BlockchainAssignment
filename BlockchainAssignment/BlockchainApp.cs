@@ -85,19 +85,7 @@ namespace BlockchainAssignment
             UpdateText(transaction.ToString());
         }
 
-        private void ForgeBlock()
-        {
-            var stakes = blockchain.blocks
-                .SelectMany(b => b.transactionList)
-                .SelectMany(tx => new[] { tx.senderAddress, tx.recipientAddress })
-                .Distinct()
-                .ToDictionary(
-                    addr => addr,
-                    addr => blockchain.GetBalance(addr)
-                );
-        }
-
-        private void newBlock(bool multithreaded)
+        private void newBlock(bool multithreaded, string minerAddress)
         {
 
             var mode = new MiningMode();
@@ -112,7 +100,7 @@ namespace BlockchainAssignment
             List<Transaction> transactions = blockchain.GetPendingTransactions(mode);
 
             // Create and append the new block - requires a reference to the previous block, a set of transactions and the miners public address (For the reward to be issued)
-            Block newBlock = new Block(blockchain.GetLastBlock(), transactions, publicKey.Text, multithreaded);
+            Block newBlock = new Block(blockchain.GetLastBlock(), transactions, minerAddress, multithreaded);
             blockchain.blocks.Add(newBlock);
 
             UpdateText(blockchain.ToString());
@@ -122,12 +110,12 @@ namespace BlockchainAssignment
         // Conduct Proof-of-work in order to mine transactions from the pool and submit a new block to the Blockchain
         private void newBlockMultiThread_Click(object sender, EventArgs e)
         {
-            newBlock(multithreaded: true);
+            newBlock(multithreaded: true, publicKey.Text);
         }
 
         private void newBlockSingleThread_Click(object sender, EventArgs e)
         {
-            newBlock(multithreaded: false);
+            newBlock(multithreaded: false, publicKey.Text);
         }
 
 
@@ -160,9 +148,20 @@ namespace BlockchainAssignment
             UpdateText("Blockchain is valid");
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void forgeBlock_Click(object sender, EventArgs e)
         {
+            var stakes = blockchain.blocks
+                .SelectMany(b => b.transactionList)
+                .SelectMany(tx => new[] { tx.senderAddress, tx.recipientAddress })
+                .Distinct()
+                .ToDictionary(
+                    addr => addr,
+                    addr => blockchain.GetBalance(addr)
+                );
 
+            var validator = ValidatorPicker.Pick(stakes);
+
+            newBlock(multithreaded: true, validator);
         }
     }
 }

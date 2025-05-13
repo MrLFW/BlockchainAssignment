@@ -59,6 +59,7 @@
             this.AltruisticButton = new System.Windows.Forms.RadioButton();
             this.RandomButton = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.forgeBlock = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,7 +75,7 @@
             // 
             // printBlock
             // 
-            this.printBlock.Location = new System.Drawing.Point(486, 121);
+            this.printBlock.Location = new System.Drawing.Point(486, 171);
             this.printBlock.Margin = new System.Windows.Forms.Padding(2);
             this.printBlock.Name = "printBlock";
             this.printBlock.Size = new System.Drawing.Size(66, 25);
@@ -85,7 +86,7 @@
             // 
             // blockNo
             // 
-            this.blockNo.Location = new System.Drawing.Point(556, 124);
+            this.blockNo.Location = new System.Drawing.Point(556, 174);
             this.blockNo.Margin = new System.Windows.Forms.Padding(2);
             this.blockNo.Name = "blockNo";
             this.blockNo.Size = new System.Drawing.Size(24, 20);
@@ -227,7 +228,7 @@
             // 
             // printBlockchain
             // 
-            this.printBlockchain.Location = new System.Drawing.Point(584, 121);
+            this.printBlockchain.Location = new System.Drawing.Point(584, 171);
             this.printBlockchain.Margin = new System.Windows.Forms.Padding(2);
             this.printBlockchain.Name = "printBlockchain";
             this.printBlockchain.Size = new System.Drawing.Size(98, 25);
@@ -375,12 +376,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Mining Mode";
             // 
+            // forgeBlock
+            // 
+            this.forgeBlock.Location = new System.Drawing.Point(485, 131);
+            this.forgeBlock.Margin = new System.Windows.Forms.Padding(2);
+            this.forgeBlock.Name = "forgeBlock";
+            this.forgeBlock.Size = new System.Drawing.Size(197, 26);
+            this.forgeBlock.TabIndex = 33;
+            this.forgeBlock.Text = "Forge New Block";
+            this.forgeBlock.UseVisualStyleBackColor = true;
+            this.forgeBlock.Click += new System.EventHandler(this.forgeBlock_Click);
+            // 
             // BlockchainApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(693, 726);
+            this.ClientSize = new System.Drawing.Size(1039, 1089);
+            this.Controls.Add(this.forgeBlock);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.createTransaction);
@@ -452,6 +465,7 @@
         private System.Windows.Forms.RadioButton AltruisticButton;
         private System.Windows.Forms.RadioButton RandomButton;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button forgeBlock;
     }
 }
 
