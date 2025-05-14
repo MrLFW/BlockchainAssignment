@@ -160,6 +160,7 @@ namespace BlockchainAssignment
                 .SelectMany(b => b.transactionList)
                 .SelectMany(tx => new[] { tx.senderAddress, tx.recipientAddress })
                 .Distinct()
+                .Where(addr => addr != "Mine Rewards")
                 .ToDictionary(
                     addr => addr,
                     addr => blockchain.GetBalance(addr)
