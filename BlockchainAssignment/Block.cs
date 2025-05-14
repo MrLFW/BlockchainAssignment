@@ -75,7 +75,7 @@ namespace BlockchainAssignment
             prevHash = lastBlock.hash;
             prevMiningTime = lastBlock.miningTime;
             prevDifficulty = lastBlock.difficulty;
-            difficulty = 1;
+            difficulty = 0;
 
             this.minerAddress = minerAddress; // The wallet to be credited the reward for the mining effort
             reward = 0.1; // Less reward for proof of stake
@@ -190,12 +190,12 @@ namespace BlockchainAssignment
         public String Forge()
         {
             var stopwatch = Stopwatch.StartNew();
-            nonce = 0; // Initalise the nonce
-            String hash = CreateHash(nonce); // Hash the block
+            nonce = 0;
+            String hash = CreateHash(nonce);
             stopwatch.Stop();
             miningTime = stopwatch.Elapsed.TotalSeconds;
             threadingType = "Single (PoS)";
-            return hash; // Return the hash meeting the difficulty requirement
+            return hash;
         }
 
 

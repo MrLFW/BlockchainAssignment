@@ -1,0 +1,82 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" version="27.0.5">
+  <diagram name="Page-1" id="5tRTiBylhOFJ_tRA1T_D">
+    <mxGraphModel dx="1665" dy="751" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Pq5CowxY3AwbIPff1khk-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Pq5CowxY3AwbIPff1khk-2" target="Pq5CowxY3AwbIPff1khk-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq5CowxY3AwbIPff1khk-2" value="Create New Transaction" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="110" y="250" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq5CowxY3AwbIPff1khk-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Pq5CowxY3AwbIPff1khk-4" target="Pq5CowxY3AwbIPff1khk-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq5CowxY3AwbIPff1khk-4" value="Generate Hash and Wallet Signature&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="110" y="335" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq5CowxY3AwbIPff1khk-5" value="Add Transaction to Transaction Pool" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="110" y="425" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq5CowxY3AwbIPff1khk-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Pq5CowxY3AwbIPff1khk-7" target="Pq5CowxY3AwbIPff1khk-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq5CowxY3AwbIPff1khk-7" value="Generate New&amp;nbsp;&lt;div&gt;Wallet&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="270" y="250" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq5CowxY3AwbIPff1khk-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Pq5CowxY3AwbIPff1khk-9" target="Pq5CowxY3AwbIPff1khk-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq5CowxY3AwbIPff1khk-9" value="Generate Public and Private Keys using ECDsaP256" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="270" y="335" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq5CowxY3AwbIPff1khk-10" value="Show Keys in UI" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="270" y="425" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq5CowxY3AwbIPff1khk-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Pq5CowxY3AwbIPff1khk-12" target="Pq5CowxY3AwbIPff1khk-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq5CowxY3AwbIPff1khk-12" value="Validate Keys" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="430" y="250" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq5CowxY3AwbIPff1khk-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Pq5CowxY3AwbIPff1khk-14" target="Pq5CowxY3AwbIPff1khk-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq5CowxY3AwbIPff1khk-14" value="Create Test Hash" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="430" y="335" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq5CowxY3AwbIPff1khk-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Pq5CowxY3AwbIPff1khk-16" target="Pq5CowxY3AwbIPff1khk-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq5CowxY3AwbIPff1khk-16" value="Create Signature Using Keys and&lt;div&gt;Test Hash&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="430" y="425" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq5CowxY3AwbIPff1khk-17" value="Validate Signature Using Public Key, Test Hash and Signature" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="425" y="515" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq5CowxY3AwbIPff1khk-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Pq5CowxY3AwbIPff1khk-19" target="Pq5CowxY3AwbIPff1khk-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq5CowxY3AwbIPff1khk-19" value="Validate Full Blockchain" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="618.75" y="250" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq5CowxY3AwbIPff1khk-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Pq5CowxY3AwbIPff1khk-21" target="Pq5CowxY3AwbIPff1khk-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq5CowxY3AwbIPff1khk-21" value="Check That Each Block&#39;s prevHash is The Next&amp;nbsp;&lt;div&gt;&lt;div&gt;Block&#39;s Hash&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="611.25" y="340" width="135" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq5CowxY3AwbIPff1khk-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Pq5CowxY3AwbIPff1khk-23" target="Pq5CowxY3AwbIPff1khk-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq5CowxY3AwbIPff1khk-23" value="Rehash Each Block and Check if New&amp;nbsp;&lt;div&gt;and Old Match&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="618.75" y="430" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq5CowxY3AwbIPff1khk-24" value="Recalculate Merkle Root for Each Block and Check if New&amp;nbsp;&lt;div&gt;and Old Match&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="592.5" y="515" width="172.5" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
